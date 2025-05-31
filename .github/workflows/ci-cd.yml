@@ -1,3 +1,4 @@
+# .github/workflows/ci-cd.yml
 name: Complete CI/CD Pipeline with Auto-Deploy
 
 on:
@@ -157,8 +158,8 @@ jobs:
           "requiresCompatibilities": ["FARGATE"],
           "cpu": "256",
           "memory": "512",
-          "executionRoleArn": "arn:aws:iam::260781727963:role/LabRole",
-          "taskRoleArn": "arn:aws:iam::260781727963:role/LabRole",
+          "executionRoleArn": "arn:aws:iam::585728444176:role/LabRole",
+          "taskRoleArn": "arn:aws:iam::585728444176:role/LabRole",
           "containerDefinitions": [
             {
               "name": "payroll-app",
@@ -167,7 +168,7 @@ jobs:
               "environment": [
                 {"name": "SPRING_PROFILES_ACTIVE", "value": "prod"},
                 {"name": "SPRING_JPA_HIBERNATE_DDL_AUTO", "value": "update"},
-                {"name": "DB_HOST", "value": "payroll-prod-db.cluug9r0tmdt.us-east-1.rds.amazonaws.com"},
+                {"name": "DB_HOST", "value": "payroll-prod-db.cre70ruhwufc.us-east-1.rds.amazonaws.com"},
                 {"name": "DB_NAME", "value": "payroll_prod"},
                 {"name": "DB_USERNAME", "value": "payroll_user"},
                 {"name": "DB_PASSWORD", "value": "SecurePassword123!"},
@@ -229,7 +230,7 @@ jobs:
         echo "   Swagger: http://$PUBLIC_IP:8080/swagger-ui.html"
         echo ""
         echo "🗄️ Database: AWS RDS PostgreSQL"
-        echo "   • Endpoint: payroll-prod-db.cluug9r0tmdt.us-east-1.rds.amazonaws.com"
+        echo "   • Endpoint: payroll-prod-db.cre70ruhwufc.us-east-1.rds.amazonaws.com"
         echo "   • Database: payroll_prod"
         echo "   • Port: 5432"
         echo ""
